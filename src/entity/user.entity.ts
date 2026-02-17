@@ -1,0 +1,19 @@
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { TodoEntity } from "./todo.entity.js";
+
+@Entity()
+export class UserEntity {
+  @PrimaryGeneratedColumn()
+  id!: number;
+
+  @Column({ type: "varchar", unique: true })
+  email!: string;
+
+  @Column({ type: "varchar" })
+  password!: string;
+
+  @OneToMany(() => TodoEntity, (todo) => todo.user)
+  todos!: TodoEntity[];
+}
+
+export default UserEntity;
