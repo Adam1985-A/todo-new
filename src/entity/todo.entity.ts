@@ -9,8 +9,17 @@ export class TodoEntity {
   @Column({ type: "varchar" })
   title!: string;
 
+  @Column({ type: "text", nullable: true })
+  description?: string;
+
   @Column({ type: "boolean", default: false })
   completed!: boolean;
+
+  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  createdAt!: Date;
+
+  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP" })
+  updatedAt!: Date;
 
   @ManyToOne(() => UserEntity, (user) => user.todos, { onDelete: "CASCADE" })
   user!: UserEntity;

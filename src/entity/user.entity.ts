@@ -12,6 +12,12 @@ export class UserEntity {
   @Column({ type: "varchar" })
   password!: string;
 
+  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+  createdAt!: Date;
+
+  @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP" })
+  updatedAt!: Date;
+
   @OneToMany(() => TodoEntity, (todo) => todo.user)
   todos!: TodoEntity[];
 }
