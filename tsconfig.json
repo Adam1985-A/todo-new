@@ -45,7 +45,7 @@
     "skipLibCheck": true,
 
     //Add these for typeorm with ES modules
-    "emitDecoratorMetadata": true,
+    "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true
   },
