@@ -18,9 +18,13 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   logging: false,
   ssl: process.env.NODE_ENV === "production"
-   ? { rejectUnauthorized
-    : false } : false,
-  entities: [UserEntity, TodoEntity],
+   ? { rejectUnauthorized: false } 
+   : false,
+  entities: [
+    process.env.NODE_ENV === "production"
+      ? "dist/entity/*.js"
+      : "src/entity/*.ts",
+  ],
   migrations: [],
   subscribers: [],
 });

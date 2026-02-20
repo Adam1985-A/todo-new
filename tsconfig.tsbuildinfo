@@ -1,1 +1,0 @@
-{"root":["./src/app.ts","./src/controllers/auth.controller.ts","./src/controllers/todo.controller.ts","./src/database/data-source.ts","./src/entity/todo.entity.ts","./src/entity/user.entity.ts","./src/middleware/auth.middleware.ts","./src/routes/auth.route.ts","./src/routes/todo.route.ts","./src/services/auth.service.ts","./src/services/todo.service.ts"],"version":"5.9.3"}

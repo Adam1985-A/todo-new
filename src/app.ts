@@ -16,6 +16,10 @@ app.use("/todos", todoRoutes);
 
   await AppDataSource.initialize()
 .then(() => {
+  console.log(
+  "Loaded entities:",
+  AppDataSource.entityMetadatas.map((e) => e.name)
+);
   console.log("Database connected successfully");
 })
   .catch((error)=>{
